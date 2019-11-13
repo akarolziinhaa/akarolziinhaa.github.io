@@ -30,7 +30,7 @@
     <li><a href="pages/sobre.html">Sobre Paris</a></li>
     <li><a href="pages/contato.html">Contato</a></li>
   </ul>
-    <div class="row">
+    <div class="row lugares">
     <div class="col s6 m7">
       <div class="card indigo lighten-4">
         <div class="card-image">
@@ -41,7 +41,7 @@
           <p>Paris, a capital da França, é uma importante cidade europeia e um centro mundial de arte, moda, gastronomia e cultura. Sua paisagem urbana do século XIX é cortada por avenidas largas e pelo rio Sena. A cidade é conhecida por monumentos como a Torre Eiffel e a Catedral de Notre-Dame, uma construção gótica do século XII, sendo famosa também pela cultura dos cafés e por lojas de estilistas famosos na Rue du Faubourg Saint-Honoré.</p>
         </div>
         <div class="card-action">
-          <a href="#">This is a link</a>
+          <a href="https://www.mensagenscomamor.com/amor-em-paris">Mais Informações</a>
         </div>
       </div>
     </div>
@@ -55,12 +55,29 @@
           <p>Cortada pelo Sena ao longo de quase 13 quilômetros, sobre o qual ergueram-se nada menos do que 37 pontes (algumas com verdadeiro status de atração turística), a Cidade Luz se faz de camadas. Não existe uma só Paris, existem várias. A Paris das artes, a da alta costura, a da boemia, a da gastronomia, a da fotografia… Decifrá-la pode demandar dias, anos, uma vida inteira. Sempre com uma bela pausa para um café (ou vários).</p>
         </div>
         <div class="card-action">
-          <a href="#">This is a link</a>
+          <a href="#">Mais Informações</a>
         </div>
       </div>
     </div>
   </div>        
-         <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-app.js"></script>
+         <script src="https://www.gsdb.enablePersistence()
+    .catch(function(err) {
+        if (err.code == 'failed-precondition') {
+            console.log('persistance failed');
+        } else if (err.code == 'unimplemented') {
+            console.log('persistance not available');
+        }
+    });
+
+db.collection('sobremesas').onSnapshot(snapshot => {
+    snapshot.docChanges().forEach(change => {
+        if (change.type === 'added') {
+            renderRecipe(change.doc.data(), change.doc.id);
+        }
+        if (change.type === 'removed') {
+        }
+    });
+});tatic.com/firebasejs/7.2.1/firebase-app.js"></script>
        <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-firestore.js"></script>
 
       <!-- TODO: Add SDKs for Firebase products that you want to use
