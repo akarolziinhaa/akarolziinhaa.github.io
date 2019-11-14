@@ -78,16 +78,6 @@
             console.log('persistance not available');
         }
     });
-
-db.collection('sobremesas').onSnapshot(snapshot => {
-    snapshot.docChanges().forEach(change => {
-        if (change.type === 'added') {
-            renderRecipe(change.doc.data(), change.doc.id);
-        }
-        if (change.type === 'removed') {
-        }
-    });
-});tatic.com/firebasejs/7.2.1/firebase-app.js"></script>
        <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-firestore.js"></script>
       <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-app.js"></script>
 
